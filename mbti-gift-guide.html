@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI별 선물 추천 | MBTI 케미 테스트</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="./index.html" class="back-btn">← 홈으로</a>
+            <h1>MBTI별 선물 추천</h1>
+            <p class="subtitle">당신의 마음을 완벽하게 전달하는 선물 가이드 🎁</p>
+        </header>
+
+        <div class="gift-guide-container">
+            <!-- MBTI 선택 섹션 -->
+            <div class="mbti-selector">
+                <h2>✨ MBTI 선택</h2>
+                <select id="mbtiSelect" class="form-select">
+                    <option value="" disabled selected>MBTI를 선택하세요</option>
+                    <option value="ISTJ">ISTJ - 세심한 관리자형</option>
+                    <option value="ISFJ">ISFJ - 헌신적인 수호자형</option>
+                    <option value="INFJ">INFJ - 통찰력 있는 선지자형</option>
+                    <option value="INTJ">INTJ - 전략적인 설계자형</option>
+                    <option value="ISTP">ISTP - 만능 재주꾼형</option>
+                    <option value="ISFP">ISFP - 예술가형</option>
+                    <option value="INFP">INFP - 열정적인 중재자형</option>
+                    <option value="INTP">INTP - 논리적인 사색가형</option>
+                    <option value="ESTP">ESTP - 모험을 즐기는 사업가형</option>
+                    <option value="ESFP">ESFP - 자유로운 영혼의 연예인형</option>
+                    <option value="ENFP">ENFP - 재기발랄한 활동가형</option>
+                    <option value="ENTP">ENTP - 논쟁을 즐기는 변론가형</option>
+                    <option value="ESTJ">ESTJ - 엄격한 관리자형</option>
+                    <option value="ESFJ">ESFJ - 사교적인 외교관형</option>
+                    <option value="ENFJ">ENFJ - 정의로운 사회운동가형</option>
+                    <option value="ENTJ">ENTJ - 대담한 통솔자형</option>
+                </select>
+            </div>
+
+            <!-- 선물 추천 내용 -->
+            <div id="giftContent" class="gift-content hidden">
+                <!-- 선물 취향 분석 -->
+                <div class="preference-section">
+                    <h2>💝 선물 취향 분석</h2>
+                    <div class="preference-card">
+                        <div id="giftStyle" class="gift-style"></div>
+                        <div id="preferences" class="preferences-list"></div>
+                        <div id="avoidList" class="avoid-list"></div>
+                    </div>
+                </div>
+
+                <!-- 가격대별 추천 -->
+                <div class="price-section">
+                    <h2>💰 가격대별 추천</h2>
+                    <div class="price-grid">
+                        <div class="price-card budget">
+                            <h3>실속형 선물</h3>
+                            <div id="budgetGifts" class="gift-list"></div>
+                        </div>
+                        <div class="price-card medium">
+                            <h3>가성비 선물</h3>
+                            <div id="mediumGifts" class="gift-list"></div>
+                        </div>
+                        <div class="price-card premium">
+                            <h3>프리미엄 선물</h3>
+                            <div id="premiumGifts" class="gift-list"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 기념일별 추천 -->
+                <div class="occasion-section">
+                    <h2>🎊 기념일별 추천</h2>
+                    <div class="occasion-grid">
+                        <div class="occasion-card">
+                            <h3>생일</h3>
+                            <div id="birthdayGifts" class="gift-list"></div>
+                        </div>
+                        <div class="occasion-card">
+                            <h3>기념일</h3>
+                            <div id="anniversaryGifts" class="gift-list"></div>
+                        </div>
+                        <div class="occasion-card">
+                            <h3>크리스마스</h3>
+                            <div id="christmasGifts" class="gift-list"></div>
+                        </div>
+                        <div class="occasion-card">
+                            <h3>일상적인 선물</h3>
+                            <div id="casualGifts" class="gift-list"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 관심사별 추천 -->
+                <div class="interest-section">
+                    <h2>🎯 관심사별 추천</h2>
+                    <div class="interest-grid">
+                        <div class="interest-card">
+                            <h3>취미/여가</h3>
+                            <div id="hobbyGifts" class="gift-list"></div>
+                        </div>
+                        <div class="interest-card">
+                            <h3>패션/뷰티</h3>
+                            <div id="fashionGifts" class="gift-list"></div>
+                        </div>
+                        <div class="interest-card">
+                            <h3>문화/예술</h3>
+                            <div id="cultureGifts" class="gift-list"></div>
+                        </div>
+                        <div class="interest-card">
+                            <h3>테크/가전</h3>
+                            <div id="techGifts" class="gift-list"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 선물 후기 -->
+                <div class="reviews-section">
+                    <h2>💌 선물 후기</h2>
+                    <div id="giftReviews" class="reviews-container"></div>
+                </div>
+
+                <!-- 선물 팁 -->
+                <div class="tips-section">
+                    <h2>💡 선물 팁</h2>
+                    <div id="giftTips" class="tips-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🔍 MBTI 정보</h4>
+                    <div class="footer-links">
+                        <a href="./mbti-types.html">MBTI 유형 설명</a>
+                        <a href="./mbti-test.html">MBTI 성격 유형 검사</a>
+                        <a href="./mbti-compatibility.html">MBTI 궁합 이론</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>💝 추천 콘텐츠</h4>
+                    <div class="footer-links">
+                        <a href="./mbti-dating-style.html">MBTI별 연애 스타일</a>
+                        <a href="./mbti-dating-course.html">MBTI별 데이트 코스</a>
+                        <a href="./mbti-gift-guide.html" class="active">MBTI별 선물 추천</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>💌 소통하기</h4>
+                    <div class="footer-links">
+                        <a href="#" onclick="alert('준비 중입니다.')">공지사항</a>
+                        <a href="#" onclick="shareContent()">친구에게 공유</a>
+                        <a href="#" onclick="alert('준비 중입니다.')">피드백 보내기</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">👥</span>
+                        <span class="stat-number">1,234,567</span>
+                        <span class="stat-label">누적 테스트</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">💘</span>
+                        <span class="stat-number">98.5%</span>
+                        <span class="stat-label">만족도</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">✨</span>
+                        <span class="stat-number">89,012</span>
+                        <span class="stat-label">오늘의 매칭</span>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    © 2024 MBTI 케미 테스트 | Made with 💖
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./mbti-gift-guide.js"></script>
+</body>
+</html> 

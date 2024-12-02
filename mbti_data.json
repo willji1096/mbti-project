@@ -1,0 +1,44 @@
+{
+    "compatibility_data": {
+        "INFP": {
+            "ENFJ": 95,
+            "ENTJ": 90,
+            "INFJ": 85,
+            "INTJ": 85,
+            "ENFP": 80,
+            "ENTP": 80,
+            "INFP": 75,
+            "INTP": 75,
+            "ESFJ": 70,
+            "ESTJ": 70,
+            "ISFJ": 65,
+            "ISTJ": 65,
+            "ESFP": 60,
+            "ESTP": 60,
+            "ISFP": 55,
+            "ISTP": 55
+        },
+        "ENFJ": {
+            "INFP": 95,
+            "ISFP": 90,
+            "ENFP": 85,
+            "ESFP": 85,
+            "INFJ": 80,
+            "ISFJ": 80,
+            "ENFJ": 75,
+            "ESFJ": 75,
+            "INTP": 70,
+            "ISTP": 70,
+            "INTJ": 65,
+            "ISTJ": 65,
+            "ENTP": 60,
+            "ESTP": 60,
+            "ENTJ": 55,
+            "ESTJ": 55
+        }
+    },
+    "detailed_descriptions": {
+        "INFP-ENFJ": "서로를 이해하고 보완해주는 천생연분입니다. INFP의 창의성과 ENFJ의 리더십이 조화롭게 어우러져 시너지를 발휘합니다.",
+        "ENFP-INTJ": "서로의 부족한 부분을 채워주는 환상의 짝꿍입니다. ENFP의 열정과 INTJ의 논리적 사고가 균형을 이룹니다."
+    }
+} 

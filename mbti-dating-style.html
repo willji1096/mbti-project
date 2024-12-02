@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MBTI별 연애 스타일을 알아보세요!">
+    <meta property="og:title" content="MBTI별 연애 스타일 | MBTI 케미 테스트">
+    <meta property="og:description" content="당신의 MBTI는 어떤 연애를 할까요?">
+    <meta property="og:type" content="website">
+    <title>💕 MBTI별 연애 스타일 | MBTI 케미 테스트</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="./index.html" class="back-btn">← 홈으로</a>
+            <div class="logo">💘</div>
+            <h1>MBTI별 연애 스타일</h1>
+            <p class="subtitle">당신의 MBTI는 어떤 연애를 할까요? 💕</p>
+            <div class="test-count">
+                <span class="highlight">123,456</span>명이 테스트했어요!
+                <div class="trending">🔥 실시간 HOT</div>
+            </div>
+        </header>
+
+        <div class="mbti-selector">
+            <h2>✨ MBTI 선택</h2>
+            <select id="mbtiSelect" class="form-select">
+                <option value="" disabled selected>MBTI를 선택하세요</option>
+                <option value="ISTJ">ISTJ - 세심한 관리자형</option>
+                <option value="ISFJ">ISFJ - 헌신적인 수호자형</option>
+                <option value="INFJ">INFJ - 통찰력 있는 선지자형</option>
+                <option value="INTJ">INTJ - 전략적인 설계자형</option>
+                <option value="ISTP">ISTP - 만능 재주꾼형</option>
+                <option value="ISFP">ISFP - 예술가형</option>
+                <option value="INFP">INFP - 열정적인 중재자형</option>
+                <option value="INTP">INTP - 논리적인 사색가형</option>
+                <option value="ESTP">ESTP - 모험을 즐기는 사업가형</option>
+                <option value="ESFP">ESFP - 자유로운 영혼의 연예인형</option>
+                <option value="ENFP">ENFP - 재기발랄한 활동가형</option>
+                <option value="ENTP">ENTP - 논쟁을 즐기는 변론가형</option>
+                <option value="ESTJ">ESTJ - 엄격한 관리자형</option>
+                <option value="ESFJ">ESFJ - 사교적인 외교관형</option>
+                <option value="ENFJ">ENFJ - 정의로운 사회운동가형</option>
+                <option value="ENTJ">ENTJ - 대담한 통솔자형</option>
+            </select>
+        </div>
+
+        <div id="datingStyleContent" class="style-content hidden">
+            <div class="style-section">
+                <h3>💝 연애 스타일 특징</h3>
+                <div id="characteristics" class="content-box"></div>
+            </div>
+
+            <div class="style-section">
+                <h3>💪 장점</h3>
+                <div id="strengths" class="content-box"></div>
+            </div>
+
+            <div class="style-section">
+                <h3>💭 약점</h3>
+                <div id="weaknesses" class="content-box"></div>
+            </div>
+
+            <div class="style-section">
+                <h3>🤝 갈등 해결 방식</h3>
+                <div id="conflictResolution" class="content-box"></div>
+            </div>
+
+            <div class="style-section">
+                <h3>💌 이상적인 데이트</h3>
+                <div id="idealDate" class="content-box"></div>
+            </div>
+        </div>
+
+        <div class="statistics-section">
+            <h2>📊 실제 커플 데이터</h2>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-title">평균 연애 기간</div>
+                    <div class="stat-value" id="avgDuration"></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">연애 만족도</div>
+                    <div class="stat-value" id="satisfaction"></div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-title">재회 의사</div>
+                    <div class="stat-value" id="reunionRate"></div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🔍 MBTI 정보</h4>
+                    <div class="footer-links">
+                        <a href="./mbti-types.html" class="footer-link">MBTI 유형 설명</a>
+                        <a href="./mbti-test.html" class="footer-link">MBTI 성격 유형 검사</a>
+                        <a href="./mbti-compatibility.html" class="footer-link">MBTI 궁합 이론</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>💝 추천 콘텐츠</h4>
+                    <div class="footer-links">
+                        <a href="./mbti-dating-style.html" class="footer-link active">MBTI별 연애 스타일</a>
+                        <a href="./mbti-dating-course.html" class="footer-link">MBTI별 데이트 코스</a>
+                        <a href="./mbti-gift-guide.html" class="footer-link">MBTI별 선물 추천</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>💌 소통하기</h4>
+                    <div class="footer-links">
+                        <a href="#" onclick="alert('준비 중입니다.')" class="footer-link">공지사항</a>
+                        <a href="#" onclick="shareContent()" class="footer-link">친구에게 공유</a>
+                        <a href="#" onclick="alert('준비 중입니다.')" class="footer-link">피드백 보내기</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">👥</span>
+                        <span class="stat-number">1,234,567</span>
+                        <span class="stat-label">누적 테스트</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">💘</span>
+                        <span class="stat-number">98.5%</span>
+                        <span class="stat-label">만족도</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">✨</span>
+                        <span class="stat-number">89,012</span>
+                        <span class="stat-label">오늘의 매칭</span>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    © 2024 MBTI 케미 테스트 | Made with 💖
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="./mbti-dating-style.js"></script>
+</body>
+</html> 

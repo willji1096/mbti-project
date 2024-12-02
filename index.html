@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MBTI 궁합 테스트로 나와 상대방의 찰떡 케미를 확인해보세요!">
+    <meta property="og:title" content="MBTI 케미 테스트 | 너와 나의 찰떡궁합은?">
+    <meta property="og:description" content="MBTI 궁합 테스트로 나와 상대방의 찰떡 케미를 확인해보세요!">
+    <meta property="og:type" content="website">
+    <title>💕 MBTI 케미 테스트 | 너와 나의 찰떡궁합은?</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">💘</div>
+            <h1>MBTI 케미 테스트</h1>
+            <p class="subtitle">너와 나의 찰떡궁합은? ✨</p>
+            <div class="test-count">
+                <span class="highlight">123,456</span>명이 테스트했어요!
+                <div class="trending">🔥 실시간 HOT</div>
+            </div>
+        </header>
+
+        <div class="mbti-selector">
+            <div class="my-mbti">
+                <h2>✨ 나의 MBTI</h2>
+                <select id="myMbti" class="form-select" required aria-label="나의 MBTI 선택">
+                    <option value="" disabled selected>MBTI를 선택하세요</option>
+                    <option value="ISTJ">ISTJ</option>
+                    <option value="ISFJ">ISFJ</option>
+                    <option value="INFJ">INFJ</option>
+                    <option value="INTJ">INTJ</option>
+                    <option value="ISTP">ISTP</option>
+                    <option value="ISFP">ISFP</option>
+                    <option value="INFP">INFP</option>
+                    <option value="INTP">INTP</option>
+                    <option value="ESTP">ESTP</option>
+                    <option value="ESFP">ESFP</option>
+                    <option value="ENFP">ENFP</option>
+                    <option value="ENTP">ENTP</option>
+                    <option value="ESTJ">ESTJ</option>
+                    <option value="ESFJ">ESFJ</option>
+                    <option value="ENFJ">ENFJ</option>
+                    <option value="ENTJ">ENTJ</option>
+                </select>
+                <div class="mbti-description" id="myMbtiDesc"></div>
+            </div>
+
+            <div class="vs-badge">
+                <span class="vs-text">VS</span>
+                <div class="heart-animation">💘</div>
+            </div>
+
+            <div class="partner-mbti">
+                <h2>💕 상대방의 MBTI</h2>
+                <select id="partnerMbti" class="form-select" required aria-label="상대방의 MBTI 선택">
+                    <option value="" disabled selected>MBTI를 선택하세요</option>
+                    <option value="ISTJ">ISTJ</option>
+                    <option value="ISFJ">ISFJ</option>
+                    <option value="INFJ">INFJ</option>
+                    <option value="INTJ">INTJ</option>
+                    <option value="ISTP">ISTP</option>
+                    <option value="ISFP">ISFP</option>
+                    <option value="INFP">INFP</option>
+                    <option value="INTP">INTP</option>
+                    <option value="ESTP">ESTP</option>
+                    <option value="ESFP">ESFP</option>
+                    <option value="ENFP">ENFP</option>
+                    <option value="ENTP">ENTP</option>
+                    <option value="ESTJ">ESTJ</option>
+                    <option value="ESFJ">ESFJ</option>
+                    <option value="ENFJ">ENFJ</option>
+                    <option value="ENTJ">ENTJ</option>
+                </select>
+                <div class="mbti-description" id="partnerMbtiDesc"></div>
+            </div>
+
+            <button id="checkCompatibility" class="check-btn">
+                <span class="btn-icon">💘</span>
+                <span class="btn-text">케미 확인하기</span>
+            </button>
+        </div>
+
+        <div class="popular-combinations">
+            <div class="section-header">
+                <h3>🔥 실시간 인기 조합</h3>
+                <span class="update-badge">방금 업데이트</span>
+            </div>
+            <div class="combination-list" id="popularCombinations">
+                <div class="combination-item">
+                    <div class="combination-pair">
+                        <span class="mbti-tag">ENFP</span>
+                        <span class="heart-icon">💘</span>
+                        <span class="mbti-tag">INTJ</span>
+                    </div>
+                    <div class="combination-details">
+                        <div class="combination-score">95점</div>
+                        <div class="combination-tag">천생연분</div>
+                    </div>
+                    <div class="combination-trend">
+                        <span class="trend-icon">📈</span>
+                        <span class="trend-text">급상승</span>
+                    </div>
+                </div>
+                <div class="combination-item">
+                    <div class="combination-pair">
+                        <span class="mbti-tag">INFP</span>
+                        <span class="heart-icon">💖</span>
+                        <span class="mbti-tag">ENFJ</span>
+                    </div>
+                    <div class="combination-details">
+                        <div class="combination-score">93점</div>
+                        <div class="combination-tag">찰떡궁합</div>
+                    </div>
+                    <div class="combination-trend">
+                        <span class="trend-icon">📈</span>
+                        <span class="trend-text">급상승</span>
+                    </div>
+                </div>
+                <div class="combination-item">
+                    <div class="combination-pair">
+                        <span class="mbti-tag">ENTP</span>
+                        <span class="heart-icon">💕</span>
+                        <span class="mbti-tag">INFJ</span>
+                    </div>
+                    <div class="combination-details">
+                        <div class="combination-score">91점</div>
+                        <div class="combination-tag">환상의 케미</div>
+                    </div>
+                    <div class="combination-trend">
+                        <span class="trend-icon">📈</span>
+                        <span class="trend-text">급상승</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-history">
+            <div class="section-header">
+                <h3>📝 나의 궁합 히스토리</h3>
+                <span class="update-badge">최근 기록</span>
+            </div>
+            <div class="history-list" id="myHistory">
+                <!-- JavaScript로 동적 추가됨 -->
+            </div>
+        </div>
+
+        <div class="recent-reviews">
+            <div class="section-header">
+                <h3>💬 실시간 후기</h3>
+                <span class="update-badge">NEW</span>
+            </div>
+            <div class="review-list" id="reviewList">
+                <!-- JavaScript로 동적 추가됨 -->
+            </div>
+            <button class="write-review-btn" id="writeReviewBtn">
+                <span class="btn-icon">✍️</span>
+                <span class="btn-text">후기 작성하기</span>
+            </button>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>🔍 MBTI 정보</h4>
+                    <div class="footer-links">
+                        <a href="./mbti-types.html" class="footer-link">MBTI 유형 설명</a>
+                        <a href="./mbti-test.html" class="footer-link">MBTI 성격 유형 검사</a>
+                        <a href="./mbti-compatibility.html" class="footer-link">MBTI 궁합 이론</a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>💝 추천 콘텐츠</h4>
+                    <div class="footer-links">
+                        <a href="./mbti-dating-style.html" class="footer-link">MBTI별 연애 스타일</a>
+                        <a href="./mbti-dating-course.html" class="footer-link">MBTI별 데이트 코스</a>
+                        <a href="./mbti-gift-guide.html" class="footer-link">MBTI별 선물 추천</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>💌 소통하기</h4>
+                    <div class="footer-links">
+                        <a href="#" onclick="alert('준비 중입니다.')" class="footer-link">공지사항</a>
+                        <a href="#" onclick="shareContent()" class="footer-link">친구에게 공유</a>
+                        <a href="#" onclick="alert('준비 중입니다.')" class="footer-link">피드백 보내기</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">👥</span>
+                        <span class="stat-number">1,234,567</span>
+                        <span class="stat-label">누적 테스트</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">💘</span>
+                        <span class="stat-number">98.5%</span>
+                        <span class="stat-label">만족도</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">✨</span>
+                        <span class="stat-number">89,012</span>
+                        <span class="stat-label">오늘의 매칭</span>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    © 2024 MBTI 케미 테스트 | Made with 💖
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 결과 모달 (처음에는 숨겨져 있음) -->
+    <div id="resultModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div id="result" class="result-container">
+                <!-- 결과는 JavaScript에서 동적으로 추가됨 -->
+            </div>
+            <div class="share-container">
+                <h3>✨ 친구에게 공유하기</h3>
+                <div class="share-buttons">
+                    <button class="share-btn kakao">
+                        <span>카카오톡 공유하기</span>
+                    </button>
+                    <button class="share-btn instagram">
+                        <span>인스타그램 공유하기</span>
+                    </button>
+                    <button class="share-btn link">
+                        <span>링크 복사하기</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 후기 작성 모달 수정 -->
+    <div id="reviewModal" class="modal">
+        <div class="modal-content review-modal">
+            <span class="close-button">&times;</span>
+            <h3>✨ 후기 작성하기</h3>
+            <form id="reviewForm" class="review-form" novalidate>
+                <div class="form-group">
+                    <label>나의 MBTI</label>
+                    <select id="reviewMyMbti" class="form-select" required>
+                        <option value="" disabled selected>MBTI를 선택하세요</option>
+                        <option value="ISTJ">ISTJ</option>
+                        <option value="ISFJ">ISFJ</option>
+                        <option value="INFJ">INFJ</option>
+                        <option value="INTJ">INTJ</option>
+                        <option value="ISTP">ISTP</option>
+                        <option value="ISFP">ISFP</option>
+                        <option value="INFP">INFP</option>
+                        <option value="INTP">INTP</option>
+                        <option value="ESTP">ESTP</option>
+                        <option value="ESFP">ESFP</option>
+                        <option value="ENFP">ENFP</option>
+                        <option value="ENTP">ENTP</option>
+                        <option value="ESTJ">ESTJ</option>
+                        <option value="ESFJ">ESFJ</option>
+                        <option value="ENFJ">ENFJ</option>
+                        <option value="ENTJ">ENTJ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>상대방 MBTI</label>
+                    <select id="reviewPartnerMbti" class="form-select" required>
+                        <option value="" disabled selected>MBTI를 선택하세요</option>
+                        <option value="ISTJ">ISTJ</option>
+                        <option value="ISFJ">ISFJ</option>
+                        <option value="INFJ">INFJ</option>
+                        <option value="INTJ">INTJ</option>
+                        <option value="ISTP">ISTP</option>
+                        <option value="ISFP">ISFP</option>
+                        <option value="INFP">INFP</option>
+                        <option value="INTP">INTP</option>
+                        <option value="ESTP">ESTP</option>
+                        <option value="ESFP">ESFP</option>
+                        <option value="ENFP">ENFP</option>
+                        <option value="ENTP">ENTP</option>
+                        <option value="ESTJ">ESTJ</option>
+                        <option value="ESFJ">ESFJ</option>
+                        <option value="ENFJ">ENFJ</option>
+                        <option value="ENTJ">ENTJ</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>만족도</label>
+                    <div class="rating-select">
+                        <span class="star" data-rating="1">⭐</span>
+                        <span class="star" data-rating="2">⭐</span>
+                        <span class="star" data-rating="3">⭐</span>
+                        <span class="star" data-rating="4">⭐</span>
+                        <span class="star" data-rating="5">⭐</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>실제 관계</label>
+                    <select id="reviewRelation" class="form-select" required>
+                        <option value="" disabled selected>관계를 선택하세요</option>
+                        <option value="couple">연인</option>
+                        <option value="friend">친구</option>
+                        <option value="coworker">직장동료</option>
+                        <option value="family">가족</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>후기 내용</label>
+                    <textarea id="reviewText" required minlength="10"
+                        placeholder="실제 경험을 바탕으로 솔직한 후기를 작성해주세요 (최소 10자, 최대 100자)"
+                        maxlength="100"></textarea>
+                    <div class="text-counter"><span id="textCount">0</span>/100</div>
+                </div>
+                <button type="submit" class="submit-review-btn">
+                    <span>후기 등록하기</span>
+                    <span class="btn-icon">✨</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
